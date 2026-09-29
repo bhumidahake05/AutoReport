@@ -1,0 +1,30 @@
+name: HR Report
+
+description: Employee analysis report
+
+data:
+  source: data/employees.xlsx
+
+sections:
+
+  - name: Summary
+    type: statistics
+
+  - name: Employee Analysis
+    type: groupby
+
+charts:
+
+  - type: bar
+    x: department
+    y: salary
+    title: Salary by Department
+
+  - type: pie
+    label: department
+    value: salary
+    title: Salary Distribution
+
+  - type: histogram
+    column: salary
+    title: Salary Distribution

@@ -1,0 +1,12 @@
+typer
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+jinja2
+pyyaml
+reportlab
+apscheduler
+openpyxl
+pytest

@@ -1,0 +1,26 @@
+[
+    {
+        "product": "Laptop",
+        "category": "Electronics",
+        "stock": 25,
+        "price": 60000
+    },
+    {
+        "product": "Mouse",
+        "category": "Electronics",
+        "stock": 100,
+        "price": 800
+    },
+    {
+        "product": "Keyboard",
+        "category": "Electronics",
+        "stock": 75,
+        "price": 1500
+    },
+    {
+        "product": "Monitor",
+        "category": "Electronics",
+        "stock": 40,
+        "price": 12000
+    }
+]

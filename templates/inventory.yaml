@@ -1,0 +1,34 @@
+name: Inventory Report
+
+description: Inventory analysis report
+
+data:
+  source: data/inventory.json
+
+sections:
+
+  - name: Inventory Summary
+    type: statistics
+
+  - name: Stock Analysis
+    type: groupby
+
+  - name: Stock Anomalies
+    type: anomaly
+    column: stock
+
+charts:
+
+  - type: bar
+    x: product
+    y: stock
+    title: Stock by Product
+
+  - type: pie
+    label: product
+    value: stock
+    title: Stock Distribution
+
+  - type: histogram
+    column: stock
+    title: Stock Distribution

@@ -1,0 +1,52 @@
+name: Sales Report
+
+description: Sales analysis report
+
+data:
+  source: data/sales.csv
+
+sections:
+
+  - name: Summary
+    type: statistics
+    columns:
+      - quantity
+      - price
+
+  - name: Sales Trends
+    type: trend
+    date_column: date
+    value_column: quantity
+
+  - name: Anomalies
+    type: anomaly
+    column: quantity
+
+charts:
+
+  - type: bar
+    x: product
+    y: quantity
+    title: Quantity by Product
+
+  - type: line
+    x: date
+    y: quantity
+    title: Daily Sales Quantity
+
+  - type: pie
+    label: product
+    value: quantity
+    title: Product Quantity Distribution
+
+  - type: scatter
+    x: quantity
+    y: price
+    title: Quantity vs Price
+
+  - type: heatmap
+    title: Correlation Heatmap
+
+  - type: histogram
+    column: quantity
+    title: Quantity Distribution

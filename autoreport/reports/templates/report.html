@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ report_name }}</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        header {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        .chart {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <header>
+
+        <h1>{{ report_name }}</h1>
+
+        <p>{{ description }}</p>
+
+    </header>
+
+
+    {% for section in sections %}
+
+    <div class="section">
+
+        <h2>{{ section.name }}</h2>
+
+        <p>
+            Section type: {{ section.type }}
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+
+    <div class="section">
+
+        <h2>Dataset</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        {% for column in columns %}
+
+                        <th>{{ column }}</th>
+
+                        {% endfor %}
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for row in rows %}
+
+                    <tr>
+
+                        {% for column in columns %}
+
+                        <td>{{ row[column] }}</td>
+
+                        {% endfor %}
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>Charts</h2>
+
+        {% for chart in charts %}
+
+        <div class="chart">
+
+            <h3>{{ chart.title }}</h3>
+
+            <p>
+                Chart type: {{ chart.type }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>

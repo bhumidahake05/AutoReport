@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autoreport"
+version = "0.1.0"
+description = "Automated Report and Analytics Generator"
+requires-python = ">=3.11"
+
+dependencies = [
+    "typer",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "plotly",
+    "jinja2",
+    "pyyaml",
+    "reportlab",
+    "apscheduler",
+    "openpyxl"
+]
+
+[project.scripts]
+autoreport = "autoreport.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
